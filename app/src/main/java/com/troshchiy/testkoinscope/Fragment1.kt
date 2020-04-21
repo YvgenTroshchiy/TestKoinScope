@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_1.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class Fragment1 : Fragment() {
 
     private var logTag: String = this.javaClass.simpleName
 
-    private val viewModel: TabViewModel by viewModel()
+    private val viewModel: TabViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
