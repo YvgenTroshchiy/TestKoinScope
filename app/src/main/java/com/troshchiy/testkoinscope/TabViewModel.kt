@@ -9,10 +9,11 @@ class TabViewModel : ViewModel() {
 
     private var tag: String = this::class.java.simpleName
 
-    val value: MutableLiveData<String> = MutableLiveData()
+    val textLiveData: MutableLiveData<String> = MutableLiveData()
 
     init {
-        Log.d(tag, "init")
-        value.postValue(Random.nextInt(0, 700).toString())
+        val text = Random.nextInt(0, 700).toString()
+        Log.d(tag, "init: $text")
+        textLiveData.value = text
     }
 }
