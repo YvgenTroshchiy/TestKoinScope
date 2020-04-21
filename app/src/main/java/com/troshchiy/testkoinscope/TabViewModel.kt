@@ -7,7 +7,7 @@ import kotlin.random.Random
 
 class TabViewModel : ViewModel() {
 
-    private var tag: String = this::class.java.simpleName
+    private var tag: String = this.javaClass.simpleName
 
     val textLiveData: MutableLiveData<String> = MutableLiveData()
 
