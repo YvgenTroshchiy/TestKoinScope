@@ -28,6 +28,10 @@ class TabFragment : Fragment() {
 
 //        val myScope1 = App.koin.createScope("A", named("A"))
 
+        btn_back.setOnClickListener {
+            activity?.onBackPressed()
+        }
+
         Log.d(logTag, lifecycle.hashCode().toString())
         tv.text = viewModel.textLiveData.value
 
