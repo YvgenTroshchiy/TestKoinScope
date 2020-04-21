@@ -26,7 +26,7 @@ class Fragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d(logTag, lifecycle.hashCode().toString())
+        Log.d(TAG, "Fragment2. ${lifecycle.hashCode()}")
         tv.text = viewModel.textLiveData.value
     }
 }

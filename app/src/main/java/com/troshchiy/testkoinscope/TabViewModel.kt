@@ -13,7 +13,8 @@ class TabViewModel : ViewModel() {
 
     init {
         val text = Random.nextInt(0, 700).toString()
-        Log.d(tag, "init: $text")
+
+        Log.w(TAG, "ViewModel. init: $text")
         textLiveData.value = text
     }
 }

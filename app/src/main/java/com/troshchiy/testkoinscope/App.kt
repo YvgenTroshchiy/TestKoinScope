@@ -6,6 +6,8 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 
+const val TAG = "testkoinscope"
+
 class App : Application() {
 
     companion object {

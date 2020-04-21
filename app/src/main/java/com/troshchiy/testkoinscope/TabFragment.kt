@@ -32,7 +32,7 @@ class TabFragment : Fragment() {
             activity?.onBackPressed()
         }
 
-        Log.d(logTag, lifecycle.hashCode().toString())
+        Log.d(TAG, "TabFragment. ${lifecycle.hashCode()}")
         tv.text = viewModel.textLiveData.value
 
         viewPager.adapter = ViewPagerPagerAdapter(childFragmentManager)
