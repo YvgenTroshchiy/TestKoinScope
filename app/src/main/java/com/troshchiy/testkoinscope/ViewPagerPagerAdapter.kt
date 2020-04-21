@@ -1,6 +1,5 @@
 package com.troshchiy.testkoinscope
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
@@ -8,7 +7,7 @@ class ViewPagerPagerAdapter(manager: FragmentManager) : FragmentStatePagerAdapte
 
     override fun getCount() = 2
 
-    override fun getItem(position: Int): Fragment {
-        return if (position == 0) Fragment1() else Fragment2()
-    }
+    override fun getPageTitle(position: Int) = if (position == 0) "First" else "Second"
+
+    override fun getItem(position: Int) = if (position == 0) Fragment1() else Fragment2()
 }
