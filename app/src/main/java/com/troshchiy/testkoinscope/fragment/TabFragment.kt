@@ -11,13 +11,15 @@ import com.troshchiy.testkoinscope.TAG
 import com.troshchiy.testkoinscope.TabViewModel
 import com.troshchiy.testkoinscope.ViewPagerPagerAdapter
 import kotlinx.android.synthetic.main.tab_fragment.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.scope.lifecycleScope
+import org.koin.androidx.viewmodel.scope.viewModel
+
 
 class TabFragment : Fragment() {
 
     private var logTag: String = this.javaClass.simpleName
 
-    private val viewModel: TabViewModel by sharedViewModel()
+    private val viewModel: TabViewModel by lifecycleScope.viewModel(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,

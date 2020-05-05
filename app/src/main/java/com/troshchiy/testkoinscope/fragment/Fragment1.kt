@@ -1,5 +1,6 @@
 package com.troshchiy.testkoinscope.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,13 +11,20 @@ import com.troshchiy.testkoinscope.R
 import com.troshchiy.testkoinscope.TAG
 import com.troshchiy.testkoinscope.TabViewModel
 import kotlinx.android.synthetic.main.fragment_1.*
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.scope.lifecycleScope
+import org.koin.androidx.viewmodel.scope.getViewModel
+
 
 class Fragment1 : Fragment() {
 
     private var logTag: String = this.javaClass.simpleName
 
-    private val viewModel: TabViewModel by sharedViewModel()
+    private lateinit var viewModel: TabViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        viewModel = requireParentFragment().lifecycleScope.getViewModel(requireParentFragment())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
